@@ -216,7 +216,7 @@ public class hello2 {
 		System.out.println(count);
 	}
 }
-```
+```  
 
 ### 6.3 验证
 * 测试程序常使用边界数据，如有效范围两端的数据、特殊的倍数等
