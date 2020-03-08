@@ -1,1 +1,1 @@
-Mooc-based online course: [【JAVA】翁凯JAVA语言程序编程全系列](https://www.bilibili.com/video/av93956743?from=search&seid=5296337070616668742) by Dr. Kai Weng, Zhejiang University. 
+Mooc-based online course: [程序设计入门—Java语言 浙江大学翁恺](https://www.bilibili.com/video/av31472464?from=search&seid=2626144595186598658) by Dr. Kai Weng, Zhejiang University. 
