@@ -2,7 +2,7 @@ I am teaching myself data science with zero background in computer science. I am
 
 Planned courses to take: 
 * Java (Ongoing)  
-    Mooc-based online course: [【JAVA】翁凯JAVA语言程序编程全系列](https://www.bilibili.com/video/av93956743?from=search&seid=5296337070616668742) by Dr. Kai Weng, Zhejiang University.  
+    Mooc-based online course: [翁恺 Java程序设计](https://www.bilibili.com/video/av77648377?from=search&seid=1305592454571776828) by Dr. Kai Weng, Zhejiang University.  
 * Data Structure  
 * Algorithm  
 * Machine Learning  
