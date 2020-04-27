@@ -4,11 +4,11 @@
 * 用control+/打开补全（联想）.  
 * console是程序运行的地方.  
 * 每句话结尾用分号结尾(insert ; to complete BlockStatement).  
-* `Command` + `/` to commentize a line (or multiple line if multiple line are selected)   
+* `Command` + `/`: to commentize a line (or multiple line if multiple line are selected)   
 * `println`: print words + /n    
 * `+`: when used in `println`, will make the value into strings and then connect strings and then print  
 * `nextInt()`：输入一个整数，如果没输入整数会报错exception: mismatch
-* <b>`Scanner in = new Scanner(System.in)` 输入</b>  
+* <b>`Scanner in = new Scanner(System.in)` 输入</b>
 ```Java
 import java.util.Scanner; // This is automatically generated when I clicked util - Scanner
 
@@ -43,7 +43,7 @@ import java.util.Scanner; // This is automatically generated when I clicked util
 public class hello2 {
 
 	public static void main(String[] args) {
-		//instead, use a variable to refer to the input 
+		//Rather than use codes above, use a variable to refer to the input 
         Scanner in = new Scanner(System.in); //read input of user as "in"
 		//赋值
 		int price = 0;
@@ -171,7 +171,9 @@ while (<循环条件>){
 * 循环执行之前判断满不满足条件，所以有可能一次循环都没有过就跳过了  
 * 条件成立是循环继续的条件  
 * 循环内要有改变条件的机会
-例子：【数数字】读入整数，输出这个整数的位数。比如：输入352，输出3
+
+例子：【数数字】  
+读入整数，输出这个整数的位数。比如：输入352，输出3
 思路：从右往左数有多少位。即，整数除法，可以除多少次10
 ```java
 import java.util.Scanner; 
@@ -181,14 +183,14 @@ public class hello2 {
 		Scanner in = new Scanner(System.in);
 		int number = in.nextInt();
 		int count = 0;
-		while (number>0)
+		while (number>0) //但是会导致0进不了这个循环。所以要用do...while...见下
 		{
-			number = number/10;
+			number = number/10; 
 			count = count +1;
 		}
 		System.out.println(count);
 	}
-}
+}0
 ```  
 
 ### 3.2 do-while循环
@@ -196,9 +198,12 @@ public class hello2 {
 do
 {
     <循环体语句>
-} while (<循环条件>)
+} 
+while (<循环条件>)
 ```
 * 在进入循环是不做检查，而是在执行完一轮循环体的代码之后，再来验证循环的条件是否满足，如果满足则继续下一轮循环，不满足则结束循环
+
+eg: 数一个数字的位数 
 ```java
 import java.util.Scanner; 
 
@@ -212,14 +217,107 @@ public class hello2 {
 			number = number/10;
 			count = count +1;
 		}
-		while (number>0); // put `while` at the end of the while loop 
+		while (number>0); // put `while` at the end of the while loop 注意分号
 		System.out.println(count);
 	}
 }
 ```  
 
-### 6.3 验证
+<u>验证</u>
 * 测试程序常使用边界数据，如有效范围两端的数据、特殊的倍数等
     * 个位数；
     * 10；
     * 负数。
+
+eg: <b>计数循环</b>  
+```java
+import java.util.Scanner; 
+
+public class hello2 {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int count = 100;
+		while (count >= 0) {
+			count = count -1;
+			System.out.println(count);
+		}
+		System.out.println("Launch!");
+	}
+}
+```  
+要注意的点：
+* 这个循环需要执行多少次？  
+* 循环停下来的时候，有没有输出最后的0？  
+* 循环结束后，count的值有多少？  
+
+eg： <b>猜数游戏 </b>  
+让计算机想一个数，然后让用户来猜，用户每输入一个数，就提示是大了还是小了直到猜中，最后告诉用户猜的次数  
+给随机数：`Math.random()//[0,1)`
+```java
+import java.util.Scanner; 
+
+public class hello2 {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int number = (int)(Math.random()*100+1); //[0,1) -->[0,100)-->[1,101)--> (int) [1,100]
+		int a;
+		int count = 0;
+		do {
+			a = in.nextInt();
+			count = count +1;
+			if (a>number) {
+				System.out.println("偏大");
+			}
+			else if (a <number)
+			{
+				System.out.println("偏小");
+			}
+		} while (a!=number);
+		System.out.println("猜对了，猜了"+count+"次。");
+	}
+}
+```
+
+eg: <b>算平均数</b>  
+让用户输入一系列的正整数，最后输入-1表示输入结束，然后程序计算出这些数字的平均数  
+注意：计算sum和count时换成浮点数来计算。因为平均数想要带小数点
+```java
+import java.util.Scanner; 
+
+public class hello2 {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int number;
+		int sum = 0;
+		int count = 0;
+		number = in.nextInt();
+		while (number != -1)
+		{
+			sum = sum +number;
+			count = count +1;
+			number = in.nextInt();
+;		}
+		System.out.println("average = "+(double)sum/count);
+	}
+}
+```
+
+eg: **整数分解**
+```java
+import java.util.Scanner; 
+
+public class hello2 {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int number;
+		number = in.nextInt();
+		int result = 0;
+		do {
+			int digit = number % 10;
+			number = number /10 ;
+			result = result*10 + digit;
+		} while (number >0);
+		System.out.println(result);
+	}
+}
+```
