@@ -1,4 +1,4 @@
-I am teaching myself data science with zero background in computer science. I am grateful my friends helped me a lot in the process of learning. Here I would like to share my notes during my study in hope to help those who are also interested and have no background.  
+I am taking online courses to study data science with zero background in computer science. I am grateful my friends helped me a lot in the process of learning. Here I would like to share my notes during my study in hope to help those who are also interested and have no background.  
 
 Planned courses to take: 
 * Java (Ongoing)  
